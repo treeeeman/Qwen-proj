@@ -13,9 +13,8 @@ messages = [
     ),
     ChatMessage(role=MessageRole.USER, content=ques),
 ]
-responses = dashscope_llm.stream_chat(messages)
-for response in responses:
-    print(response.delta, end="")
+resp = dashscope_llm.chat(messages)
+    print(resp)
 
 for i in range(3):
     ques=input("Above is my answer .Do you have any other questions?")
